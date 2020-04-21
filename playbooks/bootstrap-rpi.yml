@@ -74,6 +74,7 @@
         state: directory
     - name: "Build fbcp (frame buffer copy for Raspberry Pi)"
       shell: "cmake .. && make"
+      ignore_errors: true
       args:
         creates: fbcp
         chdir: "{{ FBCP_DIR | default('/home/pi/rpi-fbcp')}}/build"
